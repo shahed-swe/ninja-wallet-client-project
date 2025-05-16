@@ -4,7 +4,7 @@ async function upgradeToPremium() {
   try {
     // Step 1: Login to get session cookie
     console.log('Logging in with demo credentials...');
-    const loginResponse = await fetch('http://localhost:5002/api/auth/login', {
+    const loginResponse = await fetch('http://ninjawallet.ninja/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ async function upgradeToPremium() {
     console.log('\nDirectly updating user to premium for testing...');
     
     // First, get the current user to verify the update
-    const userBefore = await fetch('http://localhost:5002/api/users/me', {
+    const userBefore = await fetch('http://ninjawallet.ninja/api/users/me', {
       headers: {
         Cookie: cookies
       }
@@ -43,7 +43,7 @@ async function upgradeToPremium() {
     const premiumExpiry = new Date();
     premiumExpiry.setFullYear(premiumExpiry.getFullYear() + 1); // Premium for 1 year
     
-    await fetch('http://localhost:5002/api/execute-sql', {
+    await fetch('http://ninjawallet.ninja/api/execute-sql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ async function upgradeToPremium() {
     });
     
     // Verify the update
-    const userAfter = await fetch('http://localhost:5002/api/users/me', {
+    const userAfter = await fetch('http://ninjawallet.ninja/api/users/me', {
       headers: {
         Cookie: cookies
       }

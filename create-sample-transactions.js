@@ -4,7 +4,7 @@ async function createSampleTransactions() {
   try {
     // Step 1: Login to get session cookie
     console.log('Logging in with demo credentials...');
-    const loginResponse = await fetch('http://localhost:5002/api/auth/login', {
+    const loginResponse = await fetch('http://ninjawallet.ninja/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ async function createSampleTransactions() {
     // Process regular transactions
     for (let i = 0; i < 3; i++) {
       console.log(`\nProcessing transaction ${i+1}: ${transactions[i].note}`);
-      const response = await fetch('http://localhost:5002/api/transactions', {
+      const response = await fetch('http://ninjawallet.ninja/api/transactions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ async function createSampleTransactions() {
     
     // Process international transfer
     console.log('\nProcessing international transfer');
-    const intlResponse = await fetch('http://localhost:5002/api/international-transfer', {
+    const intlResponse = await fetch('http://ninjawallet.ninja/api/international-transfer', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ async function createSampleTransactions() {
     
     // Process investment
     console.log('\nProcessing investment');
-    const investResponse = await fetch('http://localhost:5002/api/investments', {
+    const investResponse = await fetch('http://ninjawallet.ninja/api/investments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ async function createSampleTransactions() {
     
     // Step 3: Check revenue stats
     console.log('\nChecking total revenue...');
-    const revenueResponse = await fetch('http://localhost:5002/api/admin/revenue', {
+    const revenueResponse = await fetch('http://ninjawallet.ninja/api/admin/revenue', {
       headers: {
         Cookie: cookies
       }
