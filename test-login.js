@@ -4,7 +4,7 @@ async function testLogin() {
   try {
     // Create session
     console.log('Logging in with demo credentials...');
-    const loginResponse = await fetch('http://localhost:5001/api/auth/login', {
+    const loginResponse = await fetch('http://localhost:5002/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ async function testLogin() {
     
     // Check session
     console.log('\nVerifying session...');
-    const sessionResponse = await fetch('http://localhost:5001/api/auth/session', {
+    const sessionResponse = await fetch('http://localhost:5002/api/auth/session', {
       headers: {
         Cookie: loginResponse.headers.get('set-cookie')
       }

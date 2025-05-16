@@ -1,14 +1,5 @@
 version: '3.8'
 services:
-  ninja-wallet:
-    build: .
-    ports:
-      - "5001:5001"
-    env_file:
-      - .env
-    restart: unless-stopped
-    depends_on:
-      - db
   db:
     image: postgres:16
     environment:
