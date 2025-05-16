@@ -6771,7 +6771,7 @@ app.use((req, res, next) => {
   } else {
     serveStatic(app);
   }
-  const PORT = process.env.PORT ? Number(process.env.PORT) : 5002;
+  const PORT = process.env.PORT ? Number(process.env.PORT) : 5001;
   server.listen(PORT, "0.0.0.0", () => {
     log(`serving on port ${PORT}`);
     securityMonitor.verifyOwnerAccount().then((isValid) => {
