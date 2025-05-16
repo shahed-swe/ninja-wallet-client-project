@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 async function checkRevenue() {
   try {
-    const response = await fetch('http://ninjawallet.ninja/api/admin/revenue');
+    const response = await fetch('https://ninjawallet.ninja/api/admin/revenue');
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

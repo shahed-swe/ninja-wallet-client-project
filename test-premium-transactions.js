@@ -4,7 +4,7 @@ async function testPremiumTransactions() {
   try {
     // Step 1: Login to get session cookie
     console.log('Logging in with premium demo credentials...');
-    const loginResponse = await fetch('http://ninjawallet.ninja/api/auth/login', {
+    const loginResponse = await fetch('https://ninjawallet.ninja/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ async function testPremiumTransactions() {
 
     // Add funds for transactions
     console.log('\nAdding funds for testing...');
-    await fetch('http://ninjawallet.ninja/api/add-funds', {
+    await fetch('https://ninjawallet.ninja/api/add-funds', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ async function testPremiumTransactions() {
     
     for (let i = 0; i < transactions.length; i++) {
       console.log(`\nProcessing premium transaction ${i+1}: ${transactions[i].note}`);
-      const response = await fetch('http://ninjawallet.ninja/api/transactions', {
+      const response = await fetch('https://ninjawallet.ninja/api/transactions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ async function testPremiumTransactions() {
     
     // Check updated revenue stats
     console.log('\nChecking updated revenue stats...');
-    const revenueResponse = await fetch('http://ninjawallet.ninja/api/admin/revenue', {
+    const revenueResponse = await fetch('https://ninjawallet.ninja/api/admin/revenue', {
       headers: {
         Cookie: cookies
       }

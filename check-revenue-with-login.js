@@ -4,7 +4,7 @@ async function checkRevenueWithLogin() {
   try {
     // Step 1: Login to get session cookie
     console.log('Logging in with demo credentials...');
-    const loginResponse = await fetch('http://ninjawallet.ninja/api/auth/login', {
+    const loginResponse = await fetch('https://ninjawallet.ninja/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ async function checkRevenueWithLogin() {
     
     // Step 2: Use the session cookie to get revenue data
     console.log('Fetching revenue data...');
-    const revenueResponse = await fetch('http://ninjawallet.ninja/api/admin/revenue', {
+    const revenueResponse = await fetch('https://ninjawallet.ninja/api/admin/revenue', {
       headers: {
         Cookie: cookies
       }
